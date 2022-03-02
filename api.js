@@ -1,21 +1,24 @@
 const express = require('express')
 const api = express()
-const Poor = 3000
+const port = 3000
 
 
-const Series = [{
-    nome:'Homem aranha long de casa',
-    ano:2019
-}]
 
-const Series = [ {
+
+const series = [ {
   nome:'Incredible huck',
   ano: 2015
-}]
+},
+ {
+nome: 'Homem aranha',
+ano:2022 
+ }
+ 
+]
 
 
-api.get('/series', (res, req) =>{
-    res.send(Series)
+api.get('/series', (req, res) =>{
+    res.send(series)
 })
 
-api.listen(Poor, () => console.log('listening port:') )
+api.listen(port, () => console.log('listening port:') )
